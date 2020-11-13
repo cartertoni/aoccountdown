@@ -37,25 +37,21 @@
   }
 }
 
-ul {
-  list-style: none;
+.main {
+  background-color: black;
+  font-size: 40px;
+  color: white;
 }
 
-.grid {
-  background-color: black;
-  color: white;
-  font-size: 40px;
-  text-align: center;
-  display: grid;
-  /*grid-template-columns: repeat(5, 20vw); */
-  grid-template-columns: minmax(80px, auto);
-  grid-template-rows: 50vh; 
-  justify-items: center;
-  align-items: center;
+.clock {
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: space-between;
+ align-items: center;
 }
 
 .clock-element {
-  align-self: end;
+  text-align: center;
 }
 
 span {
@@ -64,12 +60,11 @@ span {
 }
 
 
-.subheader {
-  grid-column-start: 1;
-  grid-column-end: 6;
-  align-self: start;
+.headline {
+  text-align: center;
+  align-self: center;
 }
 
 h4 {
-  font-size: .85em;
+  font-size: .75em;
 }

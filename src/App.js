@@ -34,13 +34,15 @@ const App = () => {
   }, [milliseconds])
 
   return (
-    <div class="grid">
+    <div class="main">
+      <div class="clock">
         <Time count={years} unit="years" />
         <Time count={days} unit="days" />
         <Time count={hours} unit="hours" />
         <Time count={minutes} unit="minutes" />
         <Time count={seconds} unit="seconds" />
-      <div class="subheader">
+      </div>
+      <div class="headline">
         <h4>until AOC is old enough to be President</h4>
       </div>
     </div>
