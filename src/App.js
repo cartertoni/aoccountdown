@@ -1,25 +1,50 @@
 import logo from './logo.svg';
 import './App.css';
+import Time from './Time'
 
-function App() {
+import React, {useState, useEffect} from "react";
+
+const App = () => {
+
+  //set birthday
+  const AOCBIRTHDAY = new Date('October 13, 2024 00:00:00 GMT-05:00')
+
+  //initialize countdown until birthday
+  const [milliseconds, setMilliseconds] = useState(AOCBIRTHDAY.getTime() - Date.now())
+  const [seconds, setSeconds] = useState(Math.floor(milliseconds / (1000) % 60))
+  const [minutes, setMinutes] = useState(Math.floor(milliseconds / (1000 * 60) % 60))
+  const [hours, setHours] = useState(Math.floor(milliseconds / (1000 * 60 * 60) % 24))
+  const [days, setDays] = useState(Math.floor(milliseconds / (1000 * 60 * 60 * 24) % 365))
+  const [years, setYears] = useState(Math.floor(milliseconds / (1000 * 60 * 60 * 24 * 365)))
+
+  //function to re-calculate countdown
+  const calculateTime = () => {
+    setMilliseconds(AOCBIRTHDAY.getTime() - Date.now())
+    setYears(Math.floor(milliseconds / (1000 * 60 * 60 * 24 * 365)))
+    setDays(Math.floor(milliseconds / (1000 * 60 * 60 * 24) % 365))
+    setHours(Math.floor(milliseconds / (1000 * 60 * 60) % 24))
+    setMinutes(Math.floor(milliseconds / (1000 * 60) % 60))
+    setSeconds(Math.floor(milliseconds / (1000) % 60))
+  }
+
+  useEffect( () => {
+    setTimeout( () => {
+      calculateTime() //call countdown calculation
+    }, 200)
+  }, [milliseconds])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="grid">
+        <Time count={years} unit="years" />
+        <Time count={days} unit="days" />
+        <Time count={hours} unit="hours" />
+        <Time count={minutes} unit="minutes" />
+        <Time count={seconds} unit="seconds" />
+      <div class="subheader">
+        <h4>until AOC is old enough to be President</h4>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;

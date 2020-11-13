@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+ul {
+  list-style: none;
+}
+
+.grid {
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  display: grid;
+  /*grid-template-columns: repeat(5, 20vw); */
+  grid-template-columns: minmax(80px, auto);
+  grid-template-rows: 50vh; 
+  justify-items: center;
+  align-items: center;
+}
+
+.clock-element {
+  align-self: end;
+}
+
+span {
+  display: block;
+  font-size: .75em;
+}
+
+
+.subheader {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  align-self: start;
+}
+
+h4 {
+  font-size: .85em;
+}
