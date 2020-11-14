@@ -1,12 +1,12 @@
 import './App.css';
 import Time from './Time'
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react"
+
+//set birthday
+const AOCBIRTHDAY = new Date('October 13, 2024 00:00:00 GMT-05:00')
 
 const App = () => {
-
-  //set birthday
-  const AOCBIRTHDAY = new Date('October 13, 2024 00:00:00 GMT-05:00')
 
   //initialize countdown until birthday
   const [milliseconds, setMilliseconds] = useState(AOCBIRTHDAY.getTime() - Date.now())
@@ -27,9 +27,10 @@ const App = () => {
   }
 
   useEffect( () => {
-    setTimeout( () => {
+    const timer = setTimeout( () => {
       calculateTime() //call countdown calculation
     }, 200)
+    return () => clearTimeout(timer)
   }, [milliseconds])
 
   return (
@@ -48,4 +49,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App
