@@ -41,9 +41,9 @@ const App = () => {
         <Time count={hours} unit="hours" />
         <Time count={minutes} unit="minutes" />
         <Time count={seconds} unit="seconds" />
-      </div>
-      <div class="headline">
-        <h4>until AOC is old enough to be President</h4>
+        <div class="clock-element">
+          <h4>until AOC is old enough to be President</h4>
+        </div>
       </div>
     </div>
   )

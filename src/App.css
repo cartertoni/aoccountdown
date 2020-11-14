@@ -47,27 +47,23 @@
  display: flex;
  flex-flow: row wrap;
  justify-content: space-evenly;
- align-content: flex-end;
- gap: 1em 1em;
- height: 50vh;
+ align-content: center;
+ height: 90vh;
 }
 
 .clock-element {
-  min-width: fit-content;
+  min-width: 140px;
   text-align: center;
 }
 
 span {
   display: block;
+  block-size: 1em;
   font-size: .75em;
 }
 
-
+/*
 .headline {
   text-align: center;
 }
-
-h4 {
-  font-size: .75em;
-}
-
+*/
