@@ -53,7 +53,7 @@
 }
 
 .clock-element {
-  min-width: 150px;
+  min-width: fit-content;
   text-align: center;
 }
 
