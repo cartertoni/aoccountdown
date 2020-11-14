@@ -39,7 +39,7 @@
 
 .main {
   background-color: black;
-  font-size: 40px;
+  font-size: 4em;
   color: white;
 }
 
@@ -70,3 +70,4 @@ span {
 h4 {
   font-size: .75em;
 }
+
