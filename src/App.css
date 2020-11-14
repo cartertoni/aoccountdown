@@ -39,20 +39,21 @@
 
 .main {
   background-color: black;
-  font-size: 40px;
+  font-size: 30px;
   color: white;
 }
 
 .clock {
  display: flex;
  flex-flow: row wrap;
- justify-content: space-evenly;
+ justify-content: space-around;
+ gap: 40px 0px;
  align-content: flex-end;
  height: 50vh;
 }
 
 .clock-element {
-  min-width: 110px;
+  min-width: 100px;
   text-align: center;
 }
 
